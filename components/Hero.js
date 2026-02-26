@@ -85,16 +85,16 @@ export default function Hero({
           {/* Quick Impact Stats */}
           <div className="hero-stats" aria-label="Impact statistics">
             <div className="hero-stat">
-              <span className="stat-number">850+</span>
-              <span className="stat-label">Trees Planted</span>
+              <span className="stat-number">Registered</span>
+              <span className="stat-label">CBO in West Pokot</span>
             </div>
             <div className="hero-stat">
-              <span className="stat-number">1,200+</span>
-              <span className="stat-label">Girls Supported</span>
+              <span className="stat-number">3</span>
+              <span className="stat-label">Core Programs</span>
             </div>
             <div className="hero-stat">
-              <span className="stat-number">45+</span>
-              <span className="stat-label">Women's Groups</span>
+              <span className="stat-number">Women-Led</span>
+              <span className="stat-label">Community Approach</span>
             </div>
           </div>
         </div>
@@ -325,4 +325,3 @@ export default function Hero({
     </section>
   )
 }
-

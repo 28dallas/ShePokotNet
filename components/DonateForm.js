@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function DonateForm({ presetAmounts = [500, 1000, 2500, 5000, 10000] }) {
   const [phone, setPhone] = useState('')
@@ -207,7 +208,7 @@ export default function DonateForm({ presetAmounts = [500, 1000, 2500, 5000, 100
 
         {/* Security Note */}
         <p className="security-note">
-          🔒 Your payment is secure. By donating, you agree to our terms.
+          🔒 Your payment is secure. By donating, you agree to our <Link href="/terms">terms</Link>.
         </p>
       </form>
 
@@ -437,4 +438,3 @@ export default function DonateForm({ presetAmounts = [500, 1000, 2500, 5000, 100
     </div>
   )
 }
-

@@ -18,6 +18,17 @@ export default function Footer() {
     { href: '/programs/livelihoods', label: 'Livelihoods & VSLAs' },
   ]
 
+  const policyLinks = [
+    { href: '/privacy', label: 'Privacy Policy' },
+    { href: '/cookies', label: 'Cookie Policy' },
+    { href: '/terms', label: 'Terms of Use' },
+    { href: '/safeguarding', label: 'Safeguarding & PSEA' },
+    { href: '/accessibility', label: 'Accessibility Statement' },
+    { href: '/transparency#governance', label: 'Governance & Registration' },
+    { href: '/transparency#annual-reports', label: 'Annual Reports & Financials' },
+    { href: '/documents/spn-data-protection-privacy-policy-v1.0.txt', label: 'Full Data Protection Policy', external: true },
+  ]
+
   const socialLinks = [
     { href: 'https://facebook.com/shepokot', label: 'Facebook', icon: 'f' },
     { href: 'https://twitter.com/shepokot', label: 'Twitter', icon: '𝕏' },
@@ -85,7 +96,27 @@ export default function Footer() {
               <ul>
                 {programLinks.map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} className="footer-pill">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          {/* Policies */}
+          <div className="footer-column footer-policies">
+            <h4>Policies & Compliance</h4>
+            <nav aria-label="Policies navigation">
+              <ul>
+                {policyLinks.map((link, index) => (
+                  <li key={index}>
+                    {link.external ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer-pill">
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className="footer-pill">{link.label}</Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -125,39 +156,15 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className="footer-newsletter">
-        <div className="container">
-          <div className="newsletter-content">
-            <div className="newsletter-text">
-              <h4>Stay Updated</h4>
-              <p>Subscribe to receive updates on our impact and stories from the field.</p>
-            </div>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()} aria-label="Newsletter signup">
-              <label htmlFor="footer-email" className="visually-hidden">Email address</label>
-              <input 
-                type="email" 
-                id="footer-email"
-                placeholder="Enter your email" 
-                required 
-                aria-describedby="newsletter-description"
-              />
-              <button type="submit" className="btn primary">Subscribe</button>
-            </form>
-            <p id="newsletter-description" className="visually-hidden">
-              Enter your email to subscribe to our newsletter
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>© {currentYear} She Pokot Network. A Registered Community Based Organization (CBO) in Kenya.</p>
+          <p>© {currentYear} She Pokot Network. Registered Community Based Organization (CBO), West Pokot, Kenya.</p>
           <nav className="footer-legal" aria-label="Legal links">
             <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/cookies">Cookie Policy</Link>
             <Link href="/terms">Terms of Use</Link>
+            <Link href="/safeguarding">Safeguarding</Link>
             <Link href="/accessibility">Accessibility</Link>
           </nav>
         </div>
@@ -165,7 +172,7 @@ export default function Footer() {
 
       <style jsx>{`
         .site-footer {
-          background: #2a2a2a;
+          background: linear-gradient(180deg, #2b2d31 0%, #22252a 100%);
           color: white;
           padding: 0;
           margin-top: 3rem;
@@ -179,8 +186,8 @@ export default function Footer() {
           max-width: 1200px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-          gap: 3rem;
+          grid-template-columns: 1.35fr 1fr 1fr 1.15fr 1.2fr;
+          gap: 2.25rem;
           padding: 0 2rem;
         }
 
@@ -190,6 +197,14 @@ export default function Footer() {
           margin-bottom: 1.25rem;
           font-size: 1.1rem;
           font-weight: 600;
+        }
+
+        .footer-programs,
+        .footer-policies {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          border-radius: 10px;
+          padding: 1rem;
         }
 
         .footer-brand h3 {
@@ -242,19 +257,22 @@ export default function Footer() {
         }
 
         .footer-links ul,
-        .footer-programs ul {
+        .footer-programs ul,
+        .footer-policies ul {
           list-style: none;
           padding: 0;
           margin: 0;
         }
 
         .footer-links li,
-        .footer-programs li {
-          margin: 0.6rem 0;
+        .footer-programs li,
+        .footer-policies li {
+          margin: 0.55rem 0;
         }
 
         .footer-links a,
-        .footer-programs a {
+        .footer-programs a,
+        .footer-policies a {
           color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
           font-size: 0.95rem;
@@ -264,8 +282,30 @@ export default function Footer() {
         }
 
         .footer-links a:hover,
-        .footer-programs a:hover {
+        .footer-programs a:hover,
+        .footer-policies a:hover {
           color: var(--burnt-ochre);
+        }
+
+        .footer-policies a {
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+
+        .footer-pill {
+          display: block;
+          padding: 0.48rem 0.65rem;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.03);
+          transition: all 0.2s ease;
+        }
+
+        .footer-pill:hover {
+          background: rgba(194, 125, 49, 0.18);
+          border-color: rgba(194, 125, 49, 0.75);
+          color: #fff;
+          transform: translateY(-1px);
         }
 
         .footer-contact address {
@@ -301,66 +341,9 @@ export default function Footer() {
           text-decoration: underline;
         }
 
-        /* Newsletter Section */
-        .footer-newsletter {
-          background: rgba(255, 255, 255, 0.05);
-          padding: 2.5rem 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .newsletter-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .newsletter-text {
-          flex: 1;
-          min-width: 250px;
-        }
-
-        .newsletter-text h4 {
-          color: white;
-          margin: 0 0 0.5rem;
-          font-size: 1.1rem;
-        }
-
-        .newsletter-text p {
-          margin: 0;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 0.95rem;
-        }
-
-        .newsletter-form {
-          display: flex;
-          gap: 0.75rem;
-        }
-
-        .newsletter-form input {
-          padding: 0.75rem 1rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 6px;
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-          font-size: 1rem;
-          min-width: 250px;
-        }
-
-        .newsletter-form input::placeholder {
-          color: rgba(255, 255, 255, 0.5);
-        }
-
-        .newsletter-form input:focus {
-          outline: none;
-          border-color: var(--burnt-ochre);
-          background: rgba(255, 255, 255, 0.15);
-        }
-
         /* Bottom Bar */
         .footer-bottom {
-          background: #1a1a1a;
+          background: #16181c;
           padding: 1.5rem 0;
           border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -417,6 +400,11 @@ export default function Footer() {
           .footer-brand {
             grid-column: 1 / -1;
           }
+
+          .footer-contact,
+          .footer-policies {
+            grid-column: span 1;
+          }
         }
 
         @media (max-width: 600px) {
@@ -427,19 +415,6 @@ export default function Footer() {
 
           .footer-main {
             padding: 2rem 0;
-          }
-
-          .newsletter-content {
-            flex-direction: column;
-            align-items: stretch;
-          }
-
-          .newsletter-form {
-            flex-direction: column;
-          }
-
-          .newsletter-form input {
-            min-width: auto;
           }
 
           .footer-bottom-inner {
@@ -455,4 +430,3 @@ export default function Footer() {
     </footer>
   )
 }
-

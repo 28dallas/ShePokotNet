@@ -98,6 +98,12 @@ h1,h2,h3,h4{font-family:Montserrat, sans-serif;font-weight:700}
 .story-text h3{color:var(--earthy-green);font-size:1.8rem;margin-top:0}
 .story-text p{color:#555;font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem}
 
+/* Field Gallery */
+.field-gallery{background:white;padding:3.5rem 0}
+.field-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.field-gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:transform .25s}
+.field-gallery-grid img:hover{transform:translateY(-3px)}
+
 /* Donation CTA Section */
 .donation-cta{background:linear-gradient(135deg, var(--earthy-green), var(--earthy-green));color:white;padding:4rem 0;text-align:center;margin:2rem 0}
 .donation-cta h2{color:white;font-size:2rem;margin-bottom:1rem}
@@ -193,6 +199,8 @@ img{max-width:100%;height:auto}
   .programs-featured{grid-template-columns:1fr}
   .programs-grid-large{grid-template-columns:1fr}
   .stories-grid-large{grid-template-columns:1fr}
+  .field-gallery-grid{grid-template-columns:1fr 1fr}
+  .about-photo-grid{grid-template-columns:1fr}
   .cta-buttons{flex-direction:column}
   .hero-ctas{flex-direction:column}
   .newsletter-form{flex-direction:column}
@@ -397,6 +405,13 @@ form input:focus,form textarea:focus{border-color:var(--earthy-green)}
 .story-text p{color:#555;font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem}
 .story-image img{width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 
+/* About Snapshot */
+.about-snapshot{background:linear-gradient(180deg,#ffffff 0%,#f7f8f5 100%);padding:3.5rem 0}
+.snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.snapshot-card{background:white;border:1px solid #e7e7e7;border-radius:10px;padding:1.25rem 1rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.snapshot-card strong{display:block;font-size:1.8rem;color:var(--earthy-green);margin-bottom:.35rem}
+.snapshot-card span{display:block;color:#666;font-size:.9rem}
+
 /* Values Section */
 .values-section{background:#f9f9f9;padding:4rem 0}
 .values-section h2{text-align:center;color:var(--earthy-green);font-size:2rem;margin-bottom:3rem}
@@ -418,6 +433,11 @@ form input:focus,form textarea:focus{border-color:var(--earthy-green)}
 .team-member:hover .member-image img{transform:scale(1.05)}
 .team-member h3{color:var(--earthy-green);font-size:1.2rem;margin:.5rem 0 0}
 .member-role{color:var(--burnt-ochre);font-weight:600;margin:.3rem 0 0;font-size:.95rem}
+
+/* About photo strip */
+.about-photo-strip{background:#f7f8f6;padding:2rem 0 3rem}
+.about-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.about-photo-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.1)}
 
 /* Mission Section */
 .mission-section{background:white;padding:4rem 0}
@@ -512,6 +532,13 @@ form input:focus,form textarea:focus{border-color:var(--earthy-green)}
 .accountability-item h3{color:var(--earthy-green);margin-top:0;font-size:1.1rem}
 .accountability-item p{color:#555;margin:0.5rem 0 0}
 .accountability-highlight{color:var(--burnt-ochre);font-weight:600}
+.accountability-content.framed{background:white;border:1px solid #e4e4e4;border-radius:10px;padding:1.5rem;box-shadow:0 3px 12px rgba(0,0,0,.05)}
+
+/* About Policies */
+.about-policies{background:#f9f9f9;padding:3.5rem 0}
+.about-policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.policy-link-btn{display:block;background:white;border:1px solid #ddd;border-radius:10px;padding:.85rem 1rem;text-decoration:none;color:#333;font-weight:600;transition:all .2s}
+.policy-link-btn:hover{border-color:var(--burnt-ochre);background:rgba(194,125,49,.08);color:var(--earthy-green);transform:translateY(-1px)}
 
 /* Impact Stories */
 .stories-section{background:white;padding:4rem 0}
@@ -652,4 +679,3 @@ form input:focus,form textarea:focus{border-color:var(--earthy-green)}
   .donate-btn{padding:.55rem .85rem;font-size:.75rem}
   .donate-icon{display:none}
 }
-

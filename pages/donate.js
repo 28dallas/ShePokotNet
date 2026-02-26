@@ -11,7 +11,7 @@ export default function Donate() {
         <meta name="description" content="Support She Pokot Network's work in West Pokot County, Kenya." />
       </Head>
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="page-hero" style={{backgroundImage: 'url(/img/hero-01.jpg)'}}>
           <div className="page-hero-overlay"></div>

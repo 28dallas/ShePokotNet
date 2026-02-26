@@ -16,21 +16,21 @@ export default function Programs() {
       title: tr('climate_justice'), 
       desc: 'We restore degraded lands through tree planting, regenerative agriculture, and indigenous knowledge.',
       image: 'program-climate.jpg',
-      stats: '50,000+ Trees Planted'
+      stats: 'Climate Resilience Pillar'
     },
     { 
       id: 'girls', 
       title: tr('girls_empowerment'), 
       desc: 'We create safe spaces where girls and women learn, lead, and claim their rights.',
       image: 'program-women.jpg',
-      stats: '450+ Girls Reached'
+      stats: 'Protection & Leadership Pillar'
     },
     { 
       id: 'livelihoods', 
       title: tr('livelihoods'), 
       desc: 'We build economic resilience through climate-smart agriculture and Village Savings & Loan Associations.',
       image: 'program-livelihoods.jpg',
-      stats: '600+ VSLA Members'
+      stats: 'Economic Resilience Pillar'
     }
   ]
 
@@ -42,7 +42,7 @@ export default function Programs() {
       </Head>
 
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="page-hero" style={{backgroundImage: 'url(/img/program-climate.jpg)'}}>
           <div className="page-hero-overlay"></div>
@@ -64,19 +64,17 @@ export default function Programs() {
         <section className="programs-full">
           <div className="container">
             <div className="programs-grid-large">
-              {programs.map((prog, idx) => (
-                <Link key={prog.id} href={`/programs/${prog.id}`}>
-                  <a className="program-featured-card">
-                    <div className="program-featured-image">
-                      <img src={`/img/${prog.image}`} alt={prog.title} />
-                      <div className="program-stat">{prog.stats}</div>
-                    </div>
-                    <div className="program-featured-content">
-                      <h3>{prog.title}</h3>
-                      <p>{prog.desc}</p>
-                      <span className="learn-more">Learn More →</span>
-                    </div>
-                  </a>
+              {programs.map((prog) => (
+                <Link key={prog.id} href={`/programs/${prog.id}`} className="program-featured-card">
+                  <div className="program-featured-image">
+                    <img src={`/img/${prog.image}`} alt={prog.title} />
+                    <div className="program-stat">{prog.stats}</div>
+                  </div>
+                  <div className="program-featured-content">
+                    <h3>{prog.title}</h3>
+                    <p>{prog.desc}</p>
+                    <span className="learn-more">Learn More →</span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -90,15 +88,15 @@ export default function Programs() {
             <div className="impact-boxes">
               <div className="impact-box">
                 <h4>Environmental Restoration</h4>
-                <p>Over 50,000 trees planted, 200+ households supported in climate adaptation, and indigenous knowledge preserved.</p>
+                <p>Early-stage restoration work focused on community tree planting, drought adaptation, and indigenous knowledge.</p>
               </div>
               <div className="impact-box">
                 <h4>Women's Empowerment</h4>
-                <p>600+ women organized in VSLAs, 450+ girls reached through mentorship, and 300+ women engaged in advocacy.</p>
+                <p>Safe-space mentorship, advocacy, and leadership development for girls and women across partner communities.</p>
               </div>
               <div className="impact-box">
                 <h4>Economic Resilience</h4>
-                <p>45 VSLAs active, average household income increased by 35%, and diverse livelihood skills developed.</p>
+                <p>Savings-group support and livelihood skills to strengthen household resilience over time.</p>
               </div>
             </div>
           </div>

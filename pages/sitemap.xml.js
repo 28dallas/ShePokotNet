@@ -11,7 +11,12 @@ export default function Sitemap() {
     { path: '/news', changefreq: 'weekly', priority: 0.7 },
     { path: '/transparency', changefreq: 'monthly', priority: 0.8 },
     { path: '/donate', changefreq: 'monthly', priority: 0.9 },
-    { path: '/contact', changefreq: 'monthly', priority: 0.7 }
+    { path: '/contact', changefreq: 'monthly', priority: 0.7 },
+    { path: '/privacy', changefreq: 'yearly', priority: 0.5 },
+    { path: '/cookies', changefreq: 'yearly', priority: 0.5 },
+    { path: '/terms', changefreq: 'yearly', priority: 0.5 },
+    { path: '/safeguarding', changefreq: 'yearly', priority: 0.6 },
+    { path: '/accessibility', changefreq: 'yearly', priority: 0.4 }
   ]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

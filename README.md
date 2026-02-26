@@ -185,6 +185,42 @@ Place all images in `public/img/`:
 - Meta tags added per page for sharing and search
 - All images have alt text for accessibility
 
+## Sanity CMS (Optional)
+
+Impact Stories supports a Sanity-backed CMS adapter with fallback to mock data.
+
+1. Install packages:
+```bash
+npm install @sanity/client @sanity/image-url
+```
+For Studio and schema management, install:
+```bash
+npm install sanity @sanity/vision
+```
+2. Add environment variables:
+```bash
+SANITY_PROJECT_ID=your_project_id
+SANITY_DATASET=production
+SANITY_API_VERSION=2024-01-01
+SANITY_USE_CDN=true
+SANITY_TOKEN=
+```
+3. Create `impactStory` documents in Sanity with fields:
+`title`, `person`, `role`, `location`, `category`, `publishedAt`, `summary`, `outcome`, `image`, `imageAlt`.
+4. Run Studio locally:
+```bash
+npm run studio:dev
+```
+5. Deploy Studio for editors:
+```bash
+npm run studio:deploy
+```
+
+If Sanity is unavailable or returns no stories, the site automatically uses local mock stories.
+
+For the non-technical editor process, see:
+- `CMS_WORKFLOW.md`
+
 ## Accessibility
 
 - WCAG AA compliant
@@ -238,6 +274,4 @@ For issues, feature requests, or contributions, please contact the development t
 ## License
 
 © 2026 She Pokot Network. All rights reserved.
-
-
 

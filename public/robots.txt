@@ -10,8 +10,3 @@ Sitemap: https://shepokot.org/sitemap.xml
 # Disallow admin/private areas
 Disallow: /api/
 Disallow: /admin/
-Disallow: /_next/
-
-# Crawl-delay (optional, for politeness)
-Crawl-delay: 1
-

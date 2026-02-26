@@ -14,21 +14,21 @@ export default function Transparency() {
       year: 2024,
       title: 'Annual Report 2024',
       description: 'Comprehensive overview of our programs, impact, and financial stewardship for 2024.',
-      link: '/reports/2024-annual-report.pdf',
-      highlights: ['850+ trees planted', '1,200+ girls reached', '45+ VSLAs formed']
+      link: '/documents/annual-report-2024-summary.txt',
+      highlights: ['Program systems strengthened', 'Safeguarding and data protection rollout', 'Community partnerships expanded']
     },
     {
       year: 2023,
       title: 'Annual Report 2023',
       description: 'Detailed report on our climate justice, girls\' empowerment, and livelihoods initiatives.',
-      link: '/reports/2023-annual-report.pdf',
-      highlights: ['600+ community members trained', '200+ hectares restored', '400+ direct beneficiaries']
+      link: '/documents/annual-report-2023-summary.txt',
+      highlights: ['Foundational program setup', 'Local stakeholder engagement', 'Operational policy development']
     },
     {
       year: 2022,
       title: 'Annual Report 2022',
       description: 'Foundation year report documenting program launch and initial impact.',
-      link: '/reports/2022-annual-report.pdf',
+      link: '/documents/annual-report-2022-summary.txt',
       highlights: ['Program launch', 'Community partnerships', 'First beneficiaries reached']
     }
   ]
@@ -47,7 +47,7 @@ export default function Transparency() {
       </Head>
 
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="page-hero" style={{backgroundImage: 'url(/img/community.jpg)'}}>
           <div className="page-hero-overlay"></div>
@@ -67,7 +67,7 @@ export default function Transparency() {
         </section>
 
         {/* Annual Reports */}
-        <section className="annual-reports">
+        <section className="annual-reports" id="annual-reports">
           <div className="container">
             <h2>Annual Reports</h2>
             <div className="reports-grid">
@@ -85,11 +85,27 @@ export default function Transparency() {
                     </ul>
                   </div>
                   <a href={report.link} className="btn primary" download>
-                    Download PDF
+                    Download Summary
                   </a>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Governance Section */}
+        <section className="transparency-intro" id="governance">
+          <div className="container">
+            <h2>Governance & Compliance</h2>
+            <p>
+              She Pokot Network is a registered Community Based Organization (CBO) in West Pokot, Kenya. We maintain
+              records for governance, finance, safeguarding, and data protection in line with Kenyan law and donor
+              accountability standards.
+            </p>
+            <p>
+              For formal verification and supporting records, contact{' '}
+              <a href="mailto:info@shepokot.org">info@shepokot.org</a>.
+            </p>
           </div>
         </section>
 
@@ -147,19 +163,26 @@ export default function Transparency() {
                 <div className="document-icon">📋</div>
                 <h3>CBO Registration</h3>
                 <p>Official registration certificate with Kenya NGO Board confirming our legal status as a Community Based Organization.</p>
-                <a href="/documents/cbo-registration.pdf" className="doc-link" download>Download Certificate →</a>
+                <a href="/documents/cbo-registration-summary.txt" className="doc-link" download>Download Summary →</a>
               </div>
               <div className="document-card">
                 <div className="document-icon">💰</div>
                 <h3>Audited Financial Statements</h3>
                 <p>Annual independent financial audits conducted by certified auditors to ensure accuracy and compliance.</p>
-                <a href="/documents/audited-statements-2024.pdf" className="doc-link" download>Download Statements →</a>
+                <a href="/documents/audited-statements-2024-summary.txt" className="doc-link" download>Download Summary →</a>
               </div>
               <div className="document-card">
                 <div className="document-icon">📊</div>
                 <h3>Fund Allocation Report</h3>
                 <p>Detailed breakdown of how donor funds are allocated across programs, administration, and monitoring.</p>
-                <a href="/documents/fund-allocation-2024.pdf" className="doc-link" download>Download Report →</a>
+                <a href="/documents/fund-allocation-2024-summary.txt" className="doc-link" download>Download Summary →</a>
+              </div>
+              <div className="document-card">
+                <div className="document-icon">🔐</div>
+                <h3>Full Data Protection Policy</h3>
+                <p>Access the full SPN Data Protection and Privacy Policy (Version 1.0).</p>
+                <a href="/documents/spn-data-protection-privacy-policy-v1.0.txt" className="doc-link" download>
+                  Download Policy →</a>
               </div>
             </div>
           </div>

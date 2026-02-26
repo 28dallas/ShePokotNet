@@ -22,6 +22,13 @@ export default function About() {
     { name: 'Rose Kemboi', role: 'Finance Officer', image: 'asha.jpg' }
   ]
 
+  const snapshot = [
+    { metric: 'Registered', label: 'Community Based Organization' },
+    { metric: 'West Pokot', label: 'Primary Area of Work' },
+    { metric: '3', label: 'Core Program Pillars' },
+    { metric: 'Annual', label: 'Public Transparency Reporting' },
+  ]
+
   return (
     <div>
       <Head>
@@ -30,7 +37,7 @@ export default function About() {
       </Head>
 
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="page-hero" style={{backgroundImage: 'url(/img/hero-01.jpg)'}}>
           <div className="page-hero-overlay"></div>
@@ -79,6 +86,22 @@ export default function About() {
           </div>
         </section>
 
+        {/* Snapshot Section */}
+        <section className="about-snapshot">
+          <div className="container">
+            <h2>At a Glance</h2>
+            <p className="section-intro">A quick view of our organizational profile as an early-stage CBO.</p>
+            <div className="snapshot-grid">
+              {snapshot.map((item, idx) => (
+                <article key={idx} className="snapshot-card">
+                  <strong>{item.metric}</strong>
+                  <span>{item.label}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Team Section */}
         <section className="team-section">
           <div className="container">
@@ -95,6 +118,16 @@ export default function About() {
                   <p className="member-role">{member.role}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="about-photo-strip" aria-label="Community moments">
+          <div className="container">
+            <div className="about-photo-grid">
+              <img src="/img/news-women.jpg" alt="Women leaders in community activity" />
+              <img src="/img/news-climate.jpg" alt="Community climate restoration activity" />
+              <img src="/img/news-livelihoods.jpg" alt="Livelihood and savings group engagement" />
             </div>
           </div>
         </section>
@@ -123,7 +156,7 @@ export default function About() {
         <section className="accountability-section">
           <div className="container">
             <h2>Our Commitment to Transparency</h2>
-            <div className="accountability-content">
+            <div className="accountability-content framed">
               <p className="accountability-highlight">
                 Transparency is our foundation. Like the world's leading organizations, we are committed to the highest standards of financial integrity and community reporting.
               </p>
@@ -134,6 +167,22 @@ export default function About() {
                 <a href="/transparency" className="btn primary">View Financial Reports</a>
                 <a href="/contact" className="btn">Request More Information</a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Policies Section */}
+        <section className="about-policies">
+          <div className="container">
+            <h2>Policies & Compliance</h2>
+            <p className="section-intro">Our public commitments for data protection, ethics, and safeguarding.</p>
+            <div className="about-policy-grid">
+              <a href="/privacy" className="policy-link-btn">Privacy Policy</a>
+              <a href="/cookies" className="policy-link-btn">Cookie Policy</a>
+              <a href="/terms" className="policy-link-btn">Terms of Use</a>
+              <a href="/safeguarding" className="policy-link-btn">Safeguarding & PSEA</a>
+              <a href="/transparency#governance" className="policy-link-btn">Governance & Registration</a>
+              <a href="/documents/spn-data-protection-privacy-policy-v1.0.txt" className="policy-link-btn">Full Data Protection Policy</a>
             </div>
           </div>
         </section>

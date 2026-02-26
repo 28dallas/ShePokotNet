@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
@@ -8,11 +9,14 @@ import ImpactCounter from '../components/ImpactCounter'
 import Link from 'next/link'
 
 export default function Home() {
+  const [email, setEmail] = useState('')
+  const [newsletterStatus, setNewsletterStatus] = useState(null)
+
   const impactStats = [
-    { target: 850, label: 'Trees Grown & Protected', color: '#3B6B37' },
-    { target: 1200, label: 'Girls Mentored & Kept in School', color: '#C27D31' },
-    { target: 45, label: 'Women-Led Savings Groups (VSLAs)', color: '#3B6B37' },
-    { target: 10000, label: 'Lives Touched', color: '#C27D31' }
+    { target: 1, label: 'Registered CBO in West Pokot', color: '#3B6B37' },
+    { target: 3, label: 'Core Program Pillars', color: '#C27D31' },
+    { target: 1, label: 'Women-Led Local Team', color: '#3B6B37' },
+    { target: 1, label: 'Commitment to Annual Public Reporting', color: '#C27D31' }
   ]
 
   const programs = [
@@ -21,23 +25,41 @@ export default function Home() {
       title: 'Climate Justice & Land Restoration',
       image: 'program-climate.jpg',
       excerpt: 'We restore degraded lands through tree planting and regenerative agriculture.',
-      stats: '850+ trees planted'
+      stats: 'Climate Resilience Focus'
     },
     {
       id: 'girls',
       title: 'Girls & Women Empowerment',
       image: 'program-women.jpg',
       excerpt: 'Mentorship, leadership training, and advocacy against gender-based violence.',
-      stats: '1,200+ girls supported'
+      stats: 'Protection & Leadership Focus'
     },
     {
       id: 'livelihoods',
       title: 'Livelihoods & VSLAs',
       image: 'program-livelihoods.jpg',
       excerpt: 'Village Savings & Loan Associations empower women economically.',
-      stats: '45+ groups formed'
+      stats: 'Economic Resilience Focus'
     }
   ]
+
+  async function handleNewsletterSubmit(e) {
+    e.preventDefault()
+    setNewsletterStatus('processing')
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'home' })
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Subscription failed')
+      setNewsletterStatus('success')
+      setEmail('')
+    } catch (err) {
+      setNewsletterStatus(err.message || 'Subscription failed')
+    }
+  }
 
   return (
     <div>
@@ -107,6 +129,7 @@ export default function Home() {
         <ImpactCounter 
           stats={impactStats}
           duration={2500}
+          suffix=""
         />
 
         {/* Programs Section */}
@@ -161,10 +184,24 @@ export default function Home() {
                   Growing up in West Pokot, Grace faced pressure to accept FGM and child marriage. Through She Pokot Network's mentorship program and leadership training, she found her voice.
                 </p>
                 <p>
-                  Today, Grace advocates against FGM and mentors 25 girls in her village, creating a ripple of change.
+                  Today, Grace advocates against FGM and mentors younger girls in her village, creating a ripple of change.
                 </p>
                 <Link href="/impact" className="btn">See More Stories</Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Field Gallery */}
+        <section className="field-gallery" aria-labelledby="field-gallery-heading">
+          <div className="container">
+            <h2 id="field-gallery-heading">From the Field</h2>
+            <p className="section-intro">Snapshots of community engagement and local leadership in action.</p>
+            <div className="field-gallery-grid">
+              <img src="/img/gallery-1.jpg" alt="Community members in a field training session" />
+              <img src="/img/gallery-2.jpg" alt="Women participating in a group meeting" />
+              <img src="/img/gallery-3.jpg" alt="Local team facilitating a community dialogue" />
+              <img src="/img/gallery-4.jpg" alt="Participants in a livelihood activity" />
             </div>
           </div>
         </section>
@@ -191,16 +228,24 @@ export default function Home() {
             <div className="newsletter-content">
               <h3 id="newsletter-heading">Stay Updated</h3>
               <p>Subscribe to receive updates on our impact and stories from the field.</p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
                 <label htmlFor="home-email" className="visually-hidden">Email address</label>
                 <input 
                   type="email" 
                   id="home-email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email" 
                   required 
                 />
                 <button type="submit" className="btn primary">Subscribe</button>
               </form>
+              {newsletterStatus === 'success' && (
+                <p role="status">Subscription received. Thank you.</p>
+              )}
+              {newsletterStatus && newsletterStatus !== 'success' && newsletterStatus !== 'processing' && (
+                <p role="alert">{newsletterStatus}</p>
+              )}
             </div>
           </div>
         </section>
@@ -211,4 +256,3 @@ export default function Home() {
     </div>
   )
 }
-
