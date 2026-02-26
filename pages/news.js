@@ -1,33 +1,11 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { getNewsPostsFromCMS } from '../lib/cms'
 
-export default function News() {
-  const posts = [
-    {
-      title: 'Climate Action Activities Expanded in January',
-      date: '2026-02-10',
-      excerpt: 'Community mobilization expanded participation in local restoration and climate-resilience activities.',
-      category: 'Climate Action',
-      image: '/img/news-climate.jpg'
-    },
-    {
-      title: 'VSLA Mobilization Expands Across Partner Communities',
-      date: '2026-01-30',
-      excerpt: 'Village Savings and Loan Association support activities are expanding to strengthen women-led household resilience.',
-      category: 'Livelihoods',
-      image: '/img/news-livelihoods.jpg'
-    },
-    {
-      title: 'Anti-FGM Advocacy Campaign Launches',
-      date: '2026-01-15',
-      excerpt: 'A new community dialogue series aims to end harmful practices while honoring cultural identity and dignity.',
-      category: 'Girls & Women',
-      image: '/img/news-women.jpg'
-    }
-  ]
-
+export default function News({ posts }) {
   return (
     <div>
       <Head>
@@ -50,7 +28,14 @@ export default function News() {
             <div className="story-strip" aria-label="Highlights">
               {posts.map((post, i) => (
                 <article key={i} className="story-chip">
-                  <img src={post.image} alt={post.title} />
+                  <div className="story-chip-image-wrap">
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      sizes="(max-width: 767px) 33vw, 150px"
+                    />
+                  </div>
                   <span>{post.category}</span>
                 </article>
               ))}
@@ -61,7 +46,7 @@ export default function News() {
               <h2>{posts[0].title}</h2>
               <p>{posts[0].excerpt}</p>
               <div className="meta-row">
-                <span>{new Date(posts[0].date).toLocaleDateString()}</span>
+                <span>{formatDate(posts[0].date)}</span>
                 <span>{posts[0].category}</span>
               </div>
               <Link href="/contact" className="btn primary">Request Full Update</Link>
@@ -76,10 +61,16 @@ export default function News() {
               {posts.slice(1).map((post, i) => (
                 <article key={i} className="news-card">
                   <div className="news-image-wrap">
-                    <img src={post.image} alt={post.title} className="news-image" />
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="news-image"
+                    />
                   </div>
                   <div className="meta-row">
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                    <span>{formatDate(post.date)}</span>
                     <span>{post.category}</span>
                   </div>
                   <h3>{post.title}</h3>
@@ -140,11 +131,12 @@ export default function News() {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .story-chip img {
+        .story-chip-image-wrap {
+          position: relative;
           width: 100%;
           height: 80px;
-          object-fit: cover;
           border-radius: 9px;
+          overflow: hidden;
           margin-bottom: 0.45rem;
         }
 
@@ -343,4 +335,23 @@ export default function News() {
       `}</style>
     </div>
   )
+}
+
+function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-KE', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  })
+}
+
+export async function getStaticProps() {
+  const posts = await getNewsPostsFromCMS()
+  const sorted = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  return {
+    props: {
+      posts: sorted
+    }
+  }
 }

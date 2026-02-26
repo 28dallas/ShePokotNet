@@ -207,16 +207,18 @@ SANITY_TOKEN=
 ```
 3. Create `impactStory` documents in Sanity with fields:
 `title`, `person`, `role`, `location`, `category`, `publishedAt`, `summary`, `outcome`, `image`, `imageAlt`.
-4. Run Studio locally:
+4. Create `newsPost` documents in Sanity with fields:
+`title`, `category`, `publishedAt`, `excerpt`, `image`, `imageAlt`, `status`.
+5. Run Studio locally:
 ```bash
 npm run studio:dev
 ```
-5. Deploy Studio for editors:
+6. Deploy Studio for editors:
 ```bash
 npm run studio:deploy
 ```
 
-If Sanity is unavailable or returns no stories, the site automatically uses local mock stories.
+If Sanity is unavailable or returns no documents, the site automatically uses local mock data for Impact and News.
 
 For the non-technical editor process, see:
 - `CMS_WORKFLOW.md`
@@ -274,4 +276,3 @@ For issues, feature requests, or contributions, please contact the development t
 ## License
 
 © 2026 She Pokot Network. All rights reserved.
-
