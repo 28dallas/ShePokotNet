@@ -1,0 +1,32 @@
+// Prisma schema for She Pokot Network
+// Use DATABASE_URL environment variable. For local testing you can set
+// DATABASE_URL="file:./dev.db" to use SQLite, or a Postgres connection string for production.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Transaction {
+  id                 String   @id @default(cuid())
+  provider           String
+  amount             Float
+  phone              String?
+  accountReference   String?
+  transactionDesc    String?
+  status             String   @default("initiated")
+  MerchantRequestID  String?  @db.VarChar(100)
+  CheckoutRequestID  String?  @db.VarChar(100)
+  ResultCode         Int?
+  ResultDesc         String?
+  CallbackMetadata   Json?
+  stripeSessionId    String?
+  paypalOrderId      String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+

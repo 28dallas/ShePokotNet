@@ -1,0 +1,12 @@
+# Robots.txt for She Pokot Network
+# https://shepokot.org
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shepokot.org/sitemap.xml
+
+# Disallow admin/private areas
+Disallow: /api/
+Disallow: /admin/
