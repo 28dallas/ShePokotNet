@@ -35,7 +35,7 @@ export default function Contact() {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="page-hero" style={{backgroundImage: 'url(/img/community.jpg)'}}>
+        <section className="page-hero" style={{backgroundImage: 'url(/new/photo_15_2026-03-03_11-10-37.jpg)'}}>
           <div className="page-hero-overlay"></div>
           <div className="page-hero-content">
             <h1>Get in Touch</h1>

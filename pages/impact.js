@@ -8,6 +8,16 @@ import { getImpactStoriesFromCMS } from '../lib/cms'
 export default function Impact({ stories }) {
   const featured = stories[0]
   const remainingStories = stories.slice(1)
+  const impactWallPhotos = [
+    '/new/photo_85_2026-03-03_11-10-37.jpg',
+    '/new/photo_37_2026-03-03_11-10-37.jpg',
+    '/new/photo_44_2026-03-03_11-10-37.jpg',
+    '/new/photo_52_2026-03-03_11-10-37.jpg',
+    '/new/photo_58_2026-03-03_11-10-37.jpg',
+    '/new/photo_67_2026-03-03_11-10-37.jpg',
+    '/new/photo_73_2026-03-03_11-10-37.jpg',
+    '/new/photo_81_2026-03-03_11-10-37.jpg',
+  ]
 
   return (
     <div>
@@ -99,6 +109,17 @@ export default function Impact({ stories }) {
           </div>
         </section>
 
+        <section className="impact-photo-wall" aria-labelledby="impact-photo-wall-heading">
+          <div className="container">
+            <h2 id="impact-photo-wall-heading">Impact in Photos</h2>
+            <div className="impact-wall-grid">
+              {impactWallPhotos.map((photo, idx) => (
+                <img key={photo} src={photo} alt={`Impact activity photo ${idx + 1}`} />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="impact-cta" aria-label="Impact page call to action">
           <div className="container">
             <h2>Support Community-Led Work</h2>
@@ -176,6 +197,31 @@ export default function Impact({ stories }) {
         .impact-grid-section {
           background: #fff;
           padding: 2rem 0 3rem;
+        }
+
+        .impact-photo-wall {
+          background: #f6f7f4;
+          padding: 2rem 0 3rem;
+          border-top: 1px solid #dde4dd;
+        }
+
+        .impact-photo-wall h2 {
+          margin-top: 0;
+          color: #173324;
+        }
+
+        .impact-wall-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 0.85rem;
+        }
+
+        .impact-wall-grid img {
+          width: 100%;
+          height: 190px;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .impact-grid-section h2 {

@@ -8,25 +8,14 @@ export default function Footer() {
     { href: '/programs', label: 'Our Work' },
     { href: '/impact', label: 'Impact Stories' },
     { href: '/news', label: 'News & Updates' },
-    { href: '/transparency', label: 'Transparency & Reports' },
+    { href: '/transparency', label: 'Transparency' },
     { href: '/contact', label: 'Contact Us' },
   ]
 
   const programLinks = [
     { href: '/programs/climate', label: 'Climate Justice' },
-    { href: '/programs/girls', label: 'Girls & Women Empowerment' },
-    { href: '/programs/livelihoods', label: 'Livelihoods & VSLAs' },
-  ]
-
-  const policyLinks = [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/cookies', label: 'Cookie Policy' },
-    { href: '/terms', label: 'Terms of Use' },
-    { href: '/safeguarding', label: 'Safeguarding & PSEA' },
-    { href: '/accessibility', label: 'Accessibility Statement' },
-    { href: '/transparency#governance', label: 'Governance & Registration' },
-    { href: '/transparency#annual-reports', label: 'Annual Reports & Financials' },
-    { href: '/documents/spn-data-protection-privacy-policy-v1.0.txt', label: 'Full Data Protection Policy', external: true },
+    { href: '/programs/girls', label: 'Girls & Women' },
+    { href: '/programs/livelihoods', label: 'Livelihoods' },
   ]
 
   const socialLinks = [
@@ -39,196 +28,123 @@ export default function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
-      {/* Main Footer */}
       <div className="footer-main">
-        <div className="container footer-inner">
-          {/* Brand Column */}
-          <div className="footer-column footer-brand">
-            <Link href="/" className="footer-logo-link" aria-label="She Pokot Network Home">
-              <img 
-                src="/img/logo.png" 
-                alt="She Pokot Network" 
-                className="footer-logo"
-                width="80"
-                height="80"
-              />
-            </Link>
-            <h3>She Pokot Network</h3>
-            <p className="footer-mission">
-              We follow a community-led approach in working with the poor and marginalized 
-              to promote human transformation, seek climate justice, and bear witness to 
-              the dignity of every woman and girl.
-            </p>
-            <div className="footer-social" aria-label="Social media links">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.href} 
-                  className="social-link"
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {social.icon}
-                </a>
-              ))}
+        <div className="container">
+          {/* Top Section */}
+          <div className="footer-top">
+            <div className="footer-brand">
+              <Link href="/" className="footer-logo-link" aria-label="She Pokot Network Home">
+                <img src="/img/logo.png" alt="She Pokot Network" className="footer-logo" />
+              </Link>
+              <h3>She Pokot Network</h3>
+              <p className="footer-tagline">
+                Empowering women and girls through community-led transformation, climate justice, and human dignity.
+              </p>
+              <div className="footer-social">
+                {socialLinks.map((social, index) => (
+                  <a key={index} href={social.href} className="social-link" aria-label={social.label} target="_blank" rel="noopener noreferrer">
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="footer-nav">
+              <div className="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                  {quickLinks.map((link, index) => (
+                    <li key={index}><Link href={link.href}>{link.label}</Link></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="footer-col">
+                <h4>Our Programs</h4>
+                <ul>
+                  {programLinks.map((link, index) => (
+                    <li key={index}><Link href={link.href}>{link.label}</Link></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="footer-col">
+                <h4>Get In Touch</h4>
+                <ul className="contact-list">
+                  <li>📍 West Pokot County<br />Kapenguria, Kenya</li>
+                  <li>✉️ <a href="mailto:info@shepokot.org">info@shepokot.org</a></li>
+                  <li>📞 <a href="tel:+254700000000">+254 700 000 000</a></li>
+                  <li>💬 <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="footer-column footer-links">
-            <h4>Quick Links</h4>
-            <nav aria-label="Footer navigation">
-              <ul>
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+          {/* Divider */}
+          <div className="footer-divider"></div>
 
-          {/* Programs */}
-          <div className="footer-column footer-programs">
-            <h4>Our Programs</h4>
-            <nav aria-label="Programs navigation">
-              <ul>
-                {programLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.href} className="footer-pill">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+          {/* Bottom Section */}
+          <div className="footer-bottom">
+            <p>© {currentYear} She Pokot Network. All rights reserved. Registered CBO, West Pokot, Kenya.</p>
+            <div className="footer-legal">
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+              <Link href="/safeguarding">Safeguarding</Link>
+              <Link href="/accessibility">Accessibility</Link>
+            </div>
           </div>
-
-          {/* Policies */}
-          <div className="footer-column footer-policies">
-            <h4>Policies & Compliance</h4>
-            <nav aria-label="Policies navigation">
-              <ul>
-                {policyLinks.map((link, index) => (
-                  <li key={index}>
-                    {link.external ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer-pill">
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link href={link.href} className="footer-pill">{link.label}</Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-
-          {/* Contact Info */}
-          <div className="footer-column footer-contact">
-            <h4>Contact Us</h4>
-            <address>
-              <div className="contact-item">
-                <strong>📍 Office Address</strong>
-                <p>West Pokot County<br />Kapenguria, Kenya</p>
-              </div>
-              <div className="contact-item">
-                <strong>✉️ Email</strong>
-                <p>
-                  <a href="mailto:info@shepokot.org">info@shepokot.org</a>
-                </p>
-              </div>
-              <div className="contact-item">
-                <strong>📞 Phone</strong>
-                <p>
-                  <a href="tel:+254700000000">+254 700 000 000</a>
-                </p>
-              </div>
-              <div className="contact-item">
-                <strong>💬 WhatsApp</strong>
-                <p>
-                  <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer">
-                    Chat on WhatsApp
-                  </a>
-                </p>
-              </div>
-            </address>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
-          <p>© {currentYear} She Pokot Network. Registered Community Based Organization (CBO), West Pokot, Kenya.</p>
-          <nav className="footer-legal" aria-label="Legal links">
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/cookies">Cookie Policy</Link>
-            <Link href="/terms">Terms of Use</Link>
-            <Link href="/safeguarding">Safeguarding</Link>
-            <Link href="/accessibility">Accessibility</Link>
-          </nav>
         </div>
       </div>
 
       <style jsx>{`
         .site-footer {
-          background: linear-gradient(180deg, #2b2d31 0%, #22252a 100%);
-          color: white;
-          padding: 0;
-          margin-top: 3rem;
+          background: #1a1d23;
+          color: #e5e7eb;
+          margin-top: 4rem;
         }
 
         .footer-main {
-          padding: 3rem 0;
+          padding: 4rem 0 2rem;
         }
 
-        .footer-inner {
+        .container {
           max-width: 1200px;
           margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1.35fr 1fr 1fr 1.15fr 1.2fr;
-          gap: 2.25rem;
           padding: 0 2rem;
         }
 
-        .footer-column h4 {
-          color: white;
-          margin-top: 0;
-          margin-bottom: 1.25rem;
-          font-size: 1.1rem;
-          font-weight: 600;
+        .footer-top {
+          display: grid;
+          grid-template-columns: 1.5fr 2fr;
+          gap: 4rem;
+          margin-bottom: 3rem;
         }
 
-        .footer-programs,
-        .footer-policies {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          border-radius: 10px;
-          padding: 1rem;
-        }
-
-        .footer-brand h3 {
-          margin: 0 0 1rem;
-          font-size: 1.25rem;
-          color: white;
+        .footer-brand {
+          max-width: 380px;
         }
 
         .footer-logo-link {
           display: inline-block;
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
         }
 
         .footer-logo {
           height: 70px;
           width: auto;
-          object-fit: contain;
         }
 
-        .footer-mission {
+        .footer-brand h3 {
+          font-size: 1.5rem;
+          margin: 0 0 1rem;
+          color: white;
+        }
+
+        .footer-tagline {
           font-size: 0.95rem;
           line-height: 1.7;
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 1.25rem;
+          color: #9ca3af;
+          margin-bottom: 1.5rem;
         }
 
         .footer-social {
@@ -237,128 +153,91 @@ export default function Footer() {
         }
 
         .social-link {
-          display: inline-flex;
-          width: 40px;
-          height: 40px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 50%;
+          display: flex;
           align-items: center;
           justify-content: center;
+          width: 42px;
+          height: 42px;
+          background: rgba(255, 255, 255, 0.08);
+          border-radius: 50%;
           color: white;
           text-decoration: none;
-          font-size: 1rem;
-          transition: all 0.2s;
+          transition: all 0.3s ease;
         }
 
         .social-link:hover {
-          background: var(--burnt-ochre);
-          color: white;
-          transform: translateY(-3px);
+          background: #c27d31;
+          transform: translateY(-2px);
         }
 
-        .footer-links ul,
-        .footer-programs ul,
-        .footer-policies ul {
+        .footer-nav {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+        }
+
+        .footer-col h4 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: white;
+          margin: 0 0 1.25rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .footer-col ul {
           list-style: none;
           padding: 0;
           margin: 0;
         }
 
-        .footer-links li,
-        .footer-programs li,
-        .footer-policies li {
-          margin: 0.55rem 0;
+        .footer-col li {
+          margin-bottom: 0.75rem;
         }
 
-        .footer-links a,
-        .footer-programs a,
-        .footer-policies a {
-          color: rgba(255, 255, 255, 0.8);
+        .footer-col a {
+          color: #9ca3af;
           text-decoration: none;
           font-size: 0.95rem;
           transition: color 0.2s;
-          display: inline-block;
-          padding: 0.2rem 0;
         }
 
-        .footer-links a:hover,
-        .footer-programs a:hover,
-        .footer-policies a:hover {
-          color: var(--burnt-ochre);
+        .footer-col a:hover {
+          color: #c27d31;
         }
 
-        .footer-policies a {
-          font-size: 0.9rem;
-          line-height: 1.4;
-        }
-
-        .footer-pill {
-          display: block;
-          padding: 0.48rem 0.65rem;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          border-radius: 8px;
-          background: rgba(255, 255, 255, 0.03);
-          transition: all 0.2s ease;
-        }
-
-        .footer-pill:hover {
-          background: rgba(194, 125, 49, 0.18);
-          border-color: rgba(194, 125, 49, 0.75);
-          color: #fff;
-          transform: translateY(-1px);
-        }
-
-        .footer-contact address {
-          font-style: normal;
-        }
-
-        .contact-item {
-          margin-bottom: 1.25rem;
-        }
-
-        .contact-item strong {
-          display: block;
-          color: white;
-          margin-bottom: 0.35rem;
-          font-size: 0.95rem;
-        }
-
-        .contact-item p {
-          margin: 0;
-          color: rgba(255, 255, 255, 0.8);
+        .contact-list li {
+          color: #9ca3af;
           font-size: 0.9rem;
           line-height: 1.6;
         }
 
-        .contact-item a {
-          color: var(--burnt-ochre);
-          text-decoration: none;
-          transition: color 0.2s;
+        .contact-list a {
+          color: #c27d31;
         }
 
-        .contact-item a:hover {
-          color: white;
-          text-decoration: underline;
+        .contact-list a:hover {
+          color: #d89a4d;
         }
 
-        /* Bottom Bar */
+        .footer-divider {
+          height: 1px;
+          background: rgba(255, 255, 255, 0.1);
+          margin: 2rem 0;
+        }
+
         .footer-bottom {
-          background: #16181c;
-          padding: 1.5rem 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-bottom-inner {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          padding: 1.5rem 0;
           flex-wrap: wrap;
           gap: 1rem;
         }
 
         .footer-bottom p {
           margin: 0;
-          color: rgba(255, 255, 255, 0.6);
+          color: #6b7280;
           font-size: 0.9rem;
         }
 
@@ -368,61 +247,45 @@ export default function Footer() {
         }
 
         .footer-legal a {
-          color: rgba(255, 255, 255, 0.6);
+          color: #6b7280;
           text-decoration: none;
           font-size: 0.9rem;
           transition: color 0.2s;
         }
 
         .footer-legal a:hover {
-          color: white;
+          color: #c27d31;
         }
 
-        /* Accessibility */
-        .visually-hidden {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-          .footer-inner {
-            grid-template-columns: 1fr 1fr;
-          }
-
-          .footer-brand {
-            grid-column: 1 / -1;
-          }
-
-          .footer-contact,
-          .footer-policies {
-            grid-column: span 1;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .footer-inner {
+        @media (max-width: 968px) {
+          .footer-top {
             grid-template-columns: 1fr;
-            padding: 0 1.5rem;
+            gap: 3rem;
           }
 
+          .footer-nav {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
           .footer-main {
-            padding: 2rem 0;
+            padding: 3rem 0 1.5rem;
           }
 
-          .footer-bottom-inner {
+          .footer-nav {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .footer-bottom {
             flex-direction: column;
             text-align: center;
+            gap: 1rem;
           }
 
           .footer-legal {
+            flex-wrap: wrap;
             justify-content: center;
           }
         }

@@ -34,6 +34,15 @@ export default function Programs() {
     }
   ]
 
+  const programGallery = [
+    '/new/photo_55_2026-03-03_11-10-37.jpg',
+    '/new/photo_60_2026-03-03_11-10-37.jpg',
+    '/new/photo_65_2026-03-03_11-10-37.jpg',
+    '/new/photo_70_2026-03-03_11-10-37.jpg',
+    '/new/photo_75_2026-03-03_11-10-37.jpg',
+    '/new/photo_80_2026-03-03_11-10-37.jpg'
+  ]
+
   return (
     <div>
       <Head>
@@ -44,7 +53,7 @@ export default function Programs() {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="page-hero" style={{backgroundImage: 'url(/img/program-climate.jpg)'}}>
+        <section className="page-hero" style={{backgroundImage: 'url(/new/photo_30_2026-03-03_11-10-37.jpg)'}}>
           <div className="page-hero-overlay"></div>
           <div className="page-hero-content">
             <h1>{tr('programs')}</h1>
@@ -98,6 +107,19 @@ export default function Programs() {
                 <h4>Economic Resilience</h4>
                 <p>Savings-group support and livelihood skills to strengthen household resilience over time.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="programs-gallery" aria-labelledby="programs-gallery-heading">
+          <div className="container">
+            <h2 id="programs-gallery-heading">Program Moments</h2>
+            <p className="section-intro">Field moments from climate, girls, and livelihoods activities.</p>
+            <div className="programs-gallery-grid">
+              {programGallery.map((photo, idx) => (
+                <img key={photo} src={photo} alt={`Program activity photo ${idx + 1}`} />
+              ))}
             </div>
           </div>
         </section>

@@ -23,24 +23,33 @@ export default function Home() {
     {
       id: 'climate',
       title: 'Climate Justice & Land Restoration',
-      image: 'program-climate.jpg',
+      image: 'pexels-markusspiske-2990650.jpg',
       excerpt: 'We restore degraded lands through tree planting and regenerative agriculture.',
       stats: 'Climate Resilience Focus'
     },
     {
       id: 'girls',
       title: 'Girls & Women Empowerment',
-      image: 'program-women.jpg',
+      image: 'photo_2026-02-27_08-12-17.jpg',
       excerpt: 'Mentorship, leadership training, and advocacy against gender-based violence.',
       stats: 'Protection & Leadership Focus'
     },
     {
       id: 'livelihoods',
       title: 'Livelihoods & VSLAs',
-      image: 'program-livelihoods.jpg',
+      image: 'photo_2026-02-27_08-12-13.jpg',
       excerpt: 'Village Savings & Loan Associations empower women economically.',
       stats: 'Economic Resilience Focus'
     }
+  ]
+
+  const fieldPhotos = [
+    '/img/photo_2026-02-27_08-12-00.jpg', '/img/photo_2026-02-27_08-12-07.jpg', 
+    '/img/photo_2026-02-27_08-12-08.jpg', '/img/photo_2026-02-27_08-12-09.jpg',
+    '/img/photo_2026-02-27_08-12-10.jpg', '/img/photo_2026-02-27_08-12-11.jpg', 
+    '/img/photo_2026-02-27_08-12-12.jpg', '/img/photo_2026-02-27_08-12-14.jpg',
+    '/img/photo_2026-02-27_08-12-16.jpg', '/img/photo_2026-02-27_08-12-21.jpg', 
+    '/img/photo_2026-02-27_08-12-23.jpg', '/img/photo_2026-02-27_08-12-24.jpg'
   ]
 
   async function handleNewsletterSubmit(e) {
@@ -65,7 +74,7 @@ export default function Home() {
     <div>
       <SEO 
         title="Home"
-        description="She Pokot Network: local voices driving climate justice and dignity in West Pokot, Kenya. Empowering women, restoring land, transforming futures."
+        description=".She Pokot Network supports women and girls in West Pokot through entrepreneurship, livelihoods, and community-driven development  because dignified work changes everything."
         type="website"
       />
 
@@ -80,7 +89,7 @@ export default function Home() {
               <div className="who-we-are-text">
                 <h2 id="who-we-are-heading">Who We Are</h2>
                 <p>
-                  She Pokot Network is a grassroots women-led organization advancing climate justice and dignity for girls and women in pastoralist communities of West Pokot County, Kenya.
+                  She Pokot Network is a grassroots, women-led organisation working with women, girls, and youth in the marginalized communities of West Pokot County, Kenya. Through community-driven initiatives in economic empowerment, entrepreneurship, climate-smart livelihoods, and advocacy, we are transforming futures and restoring hope one woman, one family and one village at a time.
                 </p>
                 <p>
                   Through community-driven initiatives in climate restoration, economic empowerment, and advocacy, we are transforming futures and restoring hope.
@@ -89,7 +98,7 @@ export default function Home() {
               </div>
               <div className="who-we-are-image">
                 <img 
-                  src="/img/community.jpg" 
+                  src="/new/photo_32_2026-03-03_11-10-37.jpg" 
                   alt="She Pokot Network community members together" 
                   width="600"
                   height="400"
@@ -100,7 +109,7 @@ export default function Home() {
         </section>
 
         {/* Urgency Section - The Problem */}
-        <section className="urgency-section" aria-labelledby="challenge-heading">
+        <section className="urgency-section" style={{backgroundImage: 'linear-gradient(135deg, rgba(59, 107, 55, 0.85), rgba(194, 125, 49, 0.85)), url(/new/photo_16_2026-03-03_11-10-37.jpg)', backgroundAttachment: 'fixed', backgroundSize: 'cover'}} aria-labelledby="challenge-heading">
           <div className="container">
             <h2 id="challenge-heading">The Challenge We Face</h2>
             <div className="urgency-content">
@@ -172,7 +181,7 @@ export default function Home() {
             <div className="story-featured">
               <div className="story-image">
                 <img 
-                  src="/img/grace.jpg" 
+                  src="/new/photo_38_2026-03-03_11-10-37.jpg" 
                   alt="Grace - Youth leader and mentor in West Pokot" 
                   width="600"
                   height="400"
@@ -198,16 +207,41 @@ export default function Home() {
             <h2 id="field-gallery-heading">From the Field</h2>
             <p className="section-intro">Snapshots of community engagement and local leadership in action.</p>
             <div className="field-gallery-grid">
-              <img src="/img/gallery-1.jpg" alt="Community members in a field training session" />
-              <img src="/img/gallery-2.jpg" alt="Women participating in a group meeting" />
-              <img src="/img/gallery-3.jpg" alt="Local team facilitating a community dialogue" />
-              <img src="/img/gallery-4.jpg" alt="Participants in a livelihood activity" />
+              {fieldPhotos.map((photo, idx) => (
+                <img key={photo} src={photo} alt={`From the field photo ${idx + 1}`} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Full Gallery Preview Section */}
+        <section className="gallery-preview" aria-labelledby="gallery-preview-heading">
+          <div className="container">
+            <h2 id="gallery-preview-heading">Explore Our Full Gallery</h2>
+            <p className="section-intro">
+              Over 90 powerful images capturing our work across West Pokot. From field projects to community leadership, 
+              these photographs tell the story of our mission and the people we serve.
+            </p>
+            <div className="gallery-preview-grid">
+              {Array.from({ length: 8 }, (_, i) => (
+                <img 
+                  key={i} 
+                  src={`/new/photo_${i + 1}_2026-03-03_11-10-37.jpg`}
+                  alt={`Gallery preview image ${i + 1}`}
+                  loading="lazy"
+                />
+              ))}
+            </div>
+            <div style={{textAlign: 'center', marginTop: '2.5rem'}}>
+              <Link href="/gallery" className="btn primary large">
+                View Full Gallery (90+ Images)
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Donation CTA Section */}
-        <section className="donation-cta" aria-labelledby="donate-heading">
+        <section className="donation-cta" style={{backgroundImage: 'linear-gradient(135deg, rgba(59, 107, 55, 0.85), rgba(194, 125, 49, 0.85)), url(/new/photo_56_2026-03-03_11-10-37.jpg)', backgroundSize: 'cover', backgroundAttachment: 'fixed'}} aria-labelledby="donate-heading">
           <div className="container">
             <h2 id="donate-heading">Support Our Mission</h2>
             <p>Your contribution directly empowers women, restores land, and transforms futures in West Pokot.</p>

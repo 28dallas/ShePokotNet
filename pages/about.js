@@ -17,9 +17,9 @@ export default function About() {
   ]
 
   const team = [
-    { name: 'Evelyn Kipkemboi', role: 'Executive Director', image: 'grace.jpg' },
-    { name: 'Jackline Kipkech', role: 'Program Manager', image: 'community.jpg' },
-    { name: 'Rose Kemboi', role: 'Finance Officer', image: 'asha.jpg' }
+    { name: 'Evelyn Kipkemboi', role: 'Executive Director', image: 'photo_2026-02-27_08-12-26.jpg' },
+    { name: 'Jackline Kipkech', role: 'Program Manager', image: 'photo_2026-02-27_08-12-28.jpg' },
+    { name: 'Rose Kemboi', role: 'Finance Officer', image: 'pexels-lateef-abioye-338722597-14084165.jpg' }
   ]
 
   const snapshot = [
@@ -27,6 +27,17 @@ export default function About() {
     { metric: 'West Pokot', label: 'Primary Area of Work' },
     { metric: '3', label: 'Core Program Pillars' },
     { metric: 'Annual', label: 'Public Transparency Reporting' },
+  ]
+
+  const aboutPhotos = [
+    '/new/photo_5_2026-03-03_11-10-37.jpg',
+    '/new/photo_12_2026-03-03_11-10-37.jpg',
+    '/new/photo_18_2026-03-03_11-10-37.jpg',
+    '/new/photo_22_2026-03-03_11-10-37.jpg',
+    '/new/photo_28_2026-03-03_11-10-37.jpg',
+    '/new/photo_35_2026-03-03_11-10-37.jpg',
+    '/new/photo_42_2026-03-03_11-10-37.jpg',
+    '/new/photo_50_2026-03-03_11-10-37.jpg',
   ]
 
   return (
@@ -39,7 +50,7 @@ export default function About() {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="page-hero" style={{backgroundImage: 'url(/img/hero-01.jpg)'}}>
+        <section className="page-hero" style={{backgroundImage: 'url(/new/photo_10_2026-03-03_11-10-37.jpg)'}}>
           <div className="page-hero-overlay"></div>
           <div className="page-hero-content">
             <h1>{tr('about')}</h1>
@@ -64,7 +75,7 @@ export default function About() {
                 </p>
               </div>
               <div className="story-image">
-                <img src="/img/community.jpg" alt="She Pokot Network community" />
+                <img src="/new/photo_20_2026-03-03_11-10-37.jpg" alt="She Pokot Network community" />
               </div>
             </div>
           </div>
@@ -125,9 +136,9 @@ export default function About() {
         <section className="about-photo-strip" aria-label="Community moments">
           <div className="container">
             <div className="about-photo-grid">
-              <img src="/img/news-women.jpg" alt="Women leaders in community activity" />
-              <img src="/img/news-climate.jpg" alt="Community climate restoration activity" />
-              <img src="/img/news-livelihoods.jpg" alt="Livelihood and savings group engagement" />
+              {aboutPhotos.map((photo, idx) => (
+                <img key={photo} src={photo} alt={`Community moments photo ${idx + 1}`} />
+              ))}
             </div>
           </div>
         </section>

@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 export default function Hero({ 
   title = "Empowering Women. Restoring Land. Transforming Futures.",
-  subtitle = "She Pokot Network: Local voices driving climate justice and dignity in West Pokot, Kenya.",
+  subtitle = "She Pokot Network supports women and girls in West Pokot through entrepreneurship,livelihoods, and community-driven development  because dignified work changes everything.",
   videoUrl = null, // Add video URL when available
-  backgroundImage = "/img/hero-01.jpg",
+  backgroundImage = "/img/photo_2026-02-27_08-12-27.jpg",
   ctaPrimary = { text: "Donate Now", link: "/donate" },
   ctaSecondary = { text: "Our Programs", link: "/programs" }
 }) {
@@ -145,9 +145,9 @@ export default function Hero({
           height: 100%;
           background: linear-gradient(
             135deg,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(0, 0, 0, 0.4) 50%,
-            rgba(0, 0, 0, 0.5) 100%
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 50%,
+            rgba(0, 0, 0, 0.55) 100%
           );
           z-index: 2;
         }
@@ -166,23 +166,26 @@ export default function Hero({
 
         .hero-content h1 {
           color: white;
-          font-size: clamp(2rem, 5vw, 3.5rem);
-          margin: 0 0 1.25rem;
-          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+          font-size: clamp(1.8rem, 4.5vw, 3rem);
+          margin: 0 0 1rem;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
           line-height: 1.2;
-          max-width: 900px;
+          max-width: 850px;
           margin-left: auto;
           margin-right: auto;
+          font-weight: 700;
         }
 
         .hero-tagline {
           color: rgba(255, 255, 255, 0.95);
-          font-size: clamp(1rem, 2.5vw, 1.4rem);
+          font-size: clamp(0.95rem, 2vw, 1.2rem);
           margin: 0 0 2rem;
-          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
           max-width: 700px;
           margin-left: auto;
           margin-right: auto;
+          line-height: 1.6;
+          font-weight: 400;
         }
 
         .hero-ctas {
@@ -196,14 +199,15 @@ export default function Hero({
         .hero-stats {
           display: flex;
           justify-content: center;
-          gap: 3rem;
+          gap: 2.5rem;
           flex-wrap: wrap;
-          padding: 1.5rem 2rem;
-          background: rgba(255, 255, 255, 0.1);
+          padding: 1.25rem 2rem;
+          background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(10px);
-          border-radius: 12px;
+          border-radius: 10px;
           max-width: fit-content;
           margin: 0 auto;
+          border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .hero-stat {
@@ -214,17 +218,19 @@ export default function Hero({
         }
 
         .hero-stat .stat-number {
-          font-size: 2rem;
+          font-size: 1.75rem;
           font-weight: 700;
           color: #fff;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.2rem;
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
         }
 
         .hero-stat .stat-label {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           color: rgba(255, 255, 255, 0.9);
           text-transform: uppercase;
           letter-spacing: 0.5px;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         .video-play-button {

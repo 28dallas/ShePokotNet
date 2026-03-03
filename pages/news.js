@@ -15,7 +15,7 @@ export default function News({ posts }) {
 
       <Header />
       <main id="main-content">
-        <section className="page-hero" style={{backgroundImage: 'url(/img/community.jpg)'}}>
+        <section className="page-hero" style={{backgroundImage: 'url(/new/photo_25_2026-03-03_11-10-37.jpg)'}}>
           <div className="page-hero-overlay"></div>
           <div className="page-hero-content">
             <h1>News & Resources</h1>
@@ -224,6 +224,7 @@ export default function News({ posts }) {
         }
 
         .news-image-wrap {
+          position: relative;
           height: 185px;
           overflow: hidden;
         }

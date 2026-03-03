@@ -25,6 +25,7 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'Who We Are' },
     { href: '/programs', label: 'Our Work' },
+    { href: '/gallery', label: 'Gallery' },
     { href: '/impact', label: 'Impact' },
     { href: '/news', label: 'News' },
     { href: '/transparency', label: 'Transparency' },
@@ -45,8 +46,8 @@ export default function Header() {
             src="/img/logo.png" 
             alt="She Pokot Network logo" 
             className="logo"
-            width="50"
-            height="50"
+            width="90"
+            height="90"
           />
           <div className="brand-text">
             <span className="brand-name">She Pokot</span>
@@ -165,37 +166,44 @@ export default function Header() {
         .brand {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
+          gap: 1rem;
           text-decoration: none;
           flex-shrink: 0;
+          padding: 0.3rem 0;
         }
 
         .logo {
-          width: 44px;
-          height: 44px;
+          width: 90px;
+          height: 90px;
           object-fit: contain;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          transition: transform 0.3s ease;
+        }
+
+        .brand:hover .logo {
+          transform: scale(1.05);
         }
 
         .brand-text {
           display: flex;
           flex-direction: column;
-          line-height: 1.2;
+          line-height: 1.3;
         }
 
         .brand-name {
           font-family: 'Montserrat', sans-serif;
-          font-size: 1.1rem;
+          font-size: 1.6rem;
           font-weight: 700;
           color: #1a1a1a;
           letter-spacing: -0.02em;
         }
 
         .brand-tagline {
-          font-size: 0.75rem;
-          color: #666;
-          font-weight: 500;
+          font-size: 0.95rem;
+          color: #3B6B37;
+          font-weight: 600;
           text-transform: uppercase;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.12em;
         }
 
         /* Desktop Navigation */
@@ -417,16 +425,16 @@ export default function Header() {
           }
 
           .logo {
-            width: 38px;
-            height: 38px;
+            width: 65px;
+            height: 65px;
           }
 
           .brand-name {
-            font-size: 1rem;
+            font-size: 1.3rem;
           }
 
           .brand-tagline {
-            font-size: 0.65rem;
+            font-size: 0.8rem;
           }
 
           .donate-btn {

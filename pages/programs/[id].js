@@ -7,7 +7,7 @@ const programDetails = {
   climate: {
     title: 'Climate Justice & Resilience',
     subtitle: 'We bridge the gap between indigenous knowledge and modern climate science',
-    image: 'program-climate.jpg',
+    image: '/new/photo_40_2026-03-03_11-10-37.jpg',
     description: 'Recurrent droughts threaten livelihoods in West Pokot. We combine drought adaptation, land restoration, sand dams, seedling nurseries, and community-led conservation to build ecosystem and community resilience.',
     keywords: 'Drought adaptation, land restoration, sand dams, seedling nurseries, community-led conservation',
     goal: 'To establish strong community systems for land restoration, climate adaptation, and practical drought resilience.',
@@ -23,7 +23,7 @@ const programDetails = {
   girls: {
     title: 'Girls & Women Empowerment',
     subtitle: 'Breaking the cycle of poverty by protecting the rights of the girl child',
-    image: 'program-women.jpg',
+    image: '/new/photo_48_2026-03-03_11-10-37.jpg',
     description: 'In West Pokot, high rates of child marriage, FGM, and school dropout rob girls of their futures. We create safe spaces, provide mentorship, and advocate for girls\' rights through alternative rites of passage and education support.',
     keywords: 'Anti-FGM advocacy, alternative rites of passage, education scholarships, safe spaces for survivors',
     goal: 'To strengthen safe spaces, mentorship, and leadership pathways that protect the rights of girls and women.',
@@ -39,7 +39,7 @@ const programDetails = {
   livelihoods: {
     title: 'Livelihoods & Village Savings & Loan Associations (VSLAs)',
     subtitle: 'Economic independence is the key to climate resilience',
-    image: 'program-livelihoods.jpg',
+    image: '/new/photo_63_2026-03-03_11-10-37.jpg',
     description: 'Women-led economic resilience is the foundation for climate adaptation. We support sustainable livelihoods through VSLAs, climate-smart agriculture, kitchen gardens, and green entrepreneurship.',
     keywords: 'Village Savings and Loan Associations (VSLA), climate-smart agriculture, kitchen gardens, green entrepreneurship',
     goal: 'To strengthen women-led savings and livelihood systems that improve household resilience and economic dignity.',
@@ -69,7 +69,7 @@ export default function ProgramDetail() {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="page-hero" style={{backgroundImage: `url(/img/${program?.image})`}}>
+        <section className="page-hero" style={{backgroundImage: `url(${program?.image})`}}>
           <div className="page-hero-overlay"></div>
           <div className="page-hero-content">
             <h1>{program?.title}</h1>
@@ -88,7 +88,7 @@ export default function ProgramDetail() {
                 <p>{program?.goal}</p>
               </div>
               <div className="overview-image">
-                <img src={`/img/${program?.image}`} alt={program?.title} />
+                <img src={program?.image} alt={program?.title} />
               </div>
             </div>
           </div>
