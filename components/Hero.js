@@ -166,14 +166,15 @@ export default function Hero({
 
         .hero-content h1 {
           color: white;
-          font-size: clamp(1.8rem, 4.5vw, 3rem);
+          font-size: clamp(1.5rem, 4vw, 2.75rem);
           margin: 0 0 1rem;
           text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-          line-height: 1.2;
-          max-width: 850px;
+          line-height: 1.3;
+          max-width: 900px;
           margin-left: auto;
           margin-right: auto;
           font-weight: 700;
+          padding: 0 1rem;
         }
 
         .hero-tagline {
