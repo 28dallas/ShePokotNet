@@ -162,7 +162,7 @@ export default function Hero({
         .hero-text {
           text-align: center;
           margin-bottom: 2.5rem;
-          margin-top: 8rem;
+          margin-top: 12rem;
         }
 
         .hero-content h1 {
