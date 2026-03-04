@@ -110,7 +110,7 @@ export default function Hero({
           position: relative;
           min-height: 700px;
           display: flex;
-          align-items: center;
+          align-items: flex-end;
           justify-content: center;
           overflow: hidden;
           margin-bottom: 0;
@@ -156,7 +156,7 @@ export default function Hero({
           position: relative;
           z-index: 3;
           width: 100%;
-          padding: 2rem 0;
+          padding: 2rem 0 4rem;
         }
 
         .hero-text {
