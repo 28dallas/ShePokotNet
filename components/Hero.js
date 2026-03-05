@@ -5,8 +5,7 @@ export default function Hero({
   title = "Empowering Women. Restoring Land. Transforming Futures.",
   videoUrl = null, // Add video URL when available
   backgroundImage = "/new/photo_70_2026-03-03_11-10-37.jpg",
-  ctaPrimary = { text: "Donate Now", link: "/donate" },
-  ctaSecondary = { text: "Our Programs", link: "/programs" }
+  ctaPrimary = { text: "Donate Now", link: "/donate" }
 }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
@@ -72,9 +71,6 @@ export default function Hero({
           <div className="hero-ctas">
             <Link href={ctaPrimary.link} className="btn primary large">
               {ctaPrimary.text}
-            </Link>
-            <Link href={ctaSecondary.link} className="btn large">
-              {ctaSecondary.text}
             </Link>
           </div>
 
