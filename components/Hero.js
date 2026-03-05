@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 export default function Hero({ 
   title = "Empowering Women. Restoring Land. Transforming Futures.",
-  subtitle = "She Pokot Network supports women and girls in West Pokot through entrepreneurship, livelihoods, and community-driven development because dignified work changes everything.",
   videoUrl = null, // Add video URL when available
   backgroundImage = "/new/photo_70_2026-03-03_11-10-37.jpg",
   ctaPrimary = { text: "Donate Now", link: "/donate" },
@@ -68,7 +67,6 @@ export default function Hero({
         <div className="container">
           <div className="hero-text">
             <h1>{title}</h1>
-            {subtitle ? <p className="hero-tagline">{subtitle}</p> : null}
           </div>
           
           <div className="hero-ctas">
@@ -154,13 +152,13 @@ export default function Hero({
           position: relative;
           z-index: 3;
           width: 100%;
-          padding: 6.5rem 0 4rem;
+          padding: 8rem 0 4rem;
         }
 
         .hero-text {
           text-align: center;
           margin-bottom: 2.5rem;
-          margin-top: clamp(2rem, 8vh, 5rem);
+          margin-top: clamp(4rem, 12vh, 8rem);
         }
 
         .hero-content h1 {
@@ -302,11 +300,11 @@ export default function Hero({
           }
 
           .hero-content {
-            padding: 7.5rem 0 3rem;
+            padding: 9rem 0 3rem;
           }
 
           .hero-text {
-            margin-top: 4rem;
+            margin-top: 5.5rem;
             margin-bottom: 2rem;
           }
 
