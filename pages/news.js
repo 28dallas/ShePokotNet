@@ -34,6 +34,7 @@ export default function News({ posts }) {
                       alt={post.imageAlt || post.title}
                       fill
                       sizes="(max-width: 767px) 33vw, 150px"
+                      className="story-chip-image"
                     />
                   </div>
                   <span>{post.category}</span>
@@ -138,6 +139,11 @@ export default function News({ posts }) {
           border-radius: 9px;
           overflow: hidden;
           margin-bottom: 0.45rem;
+        }
+
+        .story-chip-image {
+          object-fit: cover;
+          object-position: center;
         }
 
         .story-chip span {

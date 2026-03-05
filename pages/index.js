@@ -43,13 +43,20 @@ export default function Home() {
     }
   ]
 
+  // Use the recently added 'new' images for the field gallery
   const fieldPhotos = [
-    '/img/photo_2026-02-27_08-12-00.jpg', '/img/photo_2026-02-27_08-12-07.jpg', 
-    '/img/photo_2026-02-27_08-12-08.jpg', '/img/photo_2026-02-27_08-12-09.jpg',
-    '/img/photo_2026-02-27_08-12-10.jpg', '/img/photo_2026-02-27_08-12-11.jpg', 
-    '/img/photo_2026-02-27_08-12-12.jpg', '/img/photo_2026-02-27_08-12-14.jpg',
-    '/img/photo_2026-02-27_08-12-16.jpg', '/img/photo_2026-02-27_08-12-21.jpg', 
-    '/img/photo_2026-02-27_08-12-23.jpg', '/img/photo_2026-02-27_08-12-24.jpg'
+    '/new/photo_10_2026-03-03_11-10-37.jpg',
+    '/new/photo_12_2026-03-03_11-10-37.jpg',
+    '/new/photo_16_2026-03-03_11-10-37.jpg',
+    '/new/photo_18_2026-03-03_11-10-37.jpg',
+    '/new/photo_20_2026-03-03_11-10-37.jpg',
+    '/new/photo_28_2026-03-03_11-10-37.jpg',
+    '/new/photo_32_2026-03-03_11-10-37.jpg',
+    '/new/photo_38_2026-03-03_11-10-37.jpg',
+    '/new/photo_42_2026-03-03_11-10-37.jpg',
+    '/new/photo_50_2026-03-03_11-10-37.jpg',
+    '/new/photo_56_2026-03-03_11-10-37.jpg',
+    '/new/photo_86_2026-03-03_11-10-37.jpg'
   ]
 
   async function handleNewsletterSubmit(e) {

@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useState, useCallback, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -6,7 +5,6 @@ import SEO from '../components/SEO'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
-  const [filterCategory, setFilterCategory] = useState('all')
 
   // Generate array of all 90 images from the public/new folder
   const galleryImages = Array.from({ length: 90 }, (_, i) => ({
@@ -67,7 +65,7 @@ export default function Gallery() {
       <Header />
       <main id="main-content">
         {/* Gallery Hero Section */}
-        <section className="gallery-hero" style={{backgroundImage: 'url(/new/photo_1_2026-03-03_11-10-37.jpg)'}}>
+        <section className="gallery-hero" style={{backgroundImage: 'url(/new/photo_2026-02-28_05-47-56.jpg)'}}>
           <div className="gallery-hero-overlay"></div>
           <div className="gallery-hero-content">
             <h1>Our Gallery</h1>
@@ -97,7 +95,7 @@ export default function Gallery() {
                   onClick={() => openLightbox(image)}
                   role="button"
                   tabIndex={0}
-                  onKeyPress={(e) => {
+                  onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
                       openLightbox(image)

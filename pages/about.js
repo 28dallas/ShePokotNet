@@ -17,9 +17,9 @@ export default function About() {
   ]
 
   const team = [
-    { name: 'Evelyn Kipkemboi', role: 'Executive Director', image: 'photo_2026-02-27_08-12-26.jpg' },
-    { name: 'Jackline Kipkech', role: 'Program Manager', image: 'photo_2026-02-27_08-12-28.jpg' },
-    { name: 'Rose Kemboi', role: 'Finance Officer', image: 'pexels-lateef-abioye-338722597-14084165.jpg' }
+    { name: 'Evelyn Kipkemboi', role: 'Executive Director' },
+    { name: 'Jackline Kipkech', role: 'Program Manager' },
+    { name: 'Rose Kemboi', role: 'Finance Officer' }
   ]
 
   const snapshot = [
@@ -55,6 +55,7 @@ export default function About() {
           <div className="page-hero-content">
             <h1>{tr('about')}</h1>
             <p>Who We Are & What Drives Us</p>
+            <p className="section-intro">She Pokot Network supports women and girls in West Pokot through entrepreneurship,livelihoods, and community-driven development because dignified work changes everything.</p>
           </div>
         </section>
 
@@ -123,7 +124,11 @@ export default function About() {
               {team.map((member, i) => (
                 <div key={i} className="team-member">
                   <div className="member-image">
-                    <img src={`/img/${member.image}`} alt={member.name} />
+                    <div className="member-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                        <path d="M12 12c2.76 0 5-2.69 5-6s-2.24-6-5-6-5 2.69-5 6 2.24 6 5 6zM12 14c-4.42 0-8 2.69-8 6v2h16v-2c0-3.31-3.58-6-8-6z" />
+                      </svg>
+                    </div>
                   </div>
                   <h3>{member.name}</h3>
                   <p className="member-role">{member.role}</p>

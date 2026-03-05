@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 export default function Hero({ 
   title = "Empowering Women. Restoring Land. Transforming Futures.",
-  subtitle = "She Pokot Network supports women and girls in West Pokot through entrepreneurship,livelihoods, and community-driven development  because dignified work changes everything.",
+  subtitle = "She Pokot Network supports women and girls in West Pokot through entrepreneurship, livelihoods, and community-driven development because dignified work changes everything.",
   videoUrl = null, // Add video URL when available
-  backgroundImage = "/img/photo_2026-02-27_08-12-27.jpg",
+  backgroundImage = "/new/photo_70_2026-03-03_11-10-37.jpg",
   ctaPrimary = { text: "Donate Now", link: "/donate" },
   ctaSecondary = { text: "Our Programs", link: "/programs" }
 }) {
@@ -29,7 +29,6 @@ export default function Hero({
                   src={backgroundImage} 
                   alt="She Pokot Network - Community empowerment" 
                   className="hero-bg"
-                  priority="true"
                 />
                 <button 
                   className="video-play-button" 
@@ -59,7 +58,6 @@ export default function Hero({
             src={backgroundImage} 
             alt="She Pokot Network - Community empowerment" 
             className="hero-bg"
-            priority="true"
           />
         )}
         <div className="hero-overlay"></div>
@@ -70,7 +68,7 @@ export default function Hero({
         <div className="container">
           <div className="hero-text">
             <h1>{title}</h1>
-            <p className="hero-tagline">{subtitle}</p>
+            {subtitle ? <p className="hero-tagline">{subtitle}</p> : null}
           </div>
           
           <div className="hero-ctas">
@@ -156,13 +154,13 @@ export default function Hero({
           position: relative;
           z-index: 3;
           width: 100%;
-          padding: 2rem 0 4rem;
+          padding: 6.5rem 0 4rem;
         }
 
         .hero-text {
           text-align: center;
           margin-bottom: 2.5rem;
-          margin-top: 12rem;
+          margin-top: clamp(2rem, 8vh, 5rem);
         }
 
         .hero-content h1 {
@@ -300,7 +298,21 @@ export default function Hero({
 
         @media (max-width: 768px) {
           .hero {
-            min-height: 600px;
+            min-height: 680px;
+          }
+
+          .hero-content {
+            padding: 7.5rem 0 3rem;
+          }
+
+          .hero-text {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+          }
+
+          .hero-content h1 {
+            line-height: 1.25;
+            font-size: clamp(1.8rem, 8vw, 2.4rem);
           }
           
           .hero-stats {

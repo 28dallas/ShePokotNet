@@ -46,7 +46,7 @@ h1,h2,h3,h4{font-family:Montserrat, sans-serif;font-weight:700}
 .mobile-nav-link.active{background:#f9f9f9;color:var(--earthy-green);border-left:4px solid var(--burnt-ochre);padding-left:calc(2rem - 4px)}
 .mobile-donate-btn{display:block;padding:1rem 2rem;background:var(--burnt-ochre);color:white;text-decoration:none;font-weight:600;text-align:center;margin:1rem 1rem;border-radius:4px;transition:all .2s}
 .mobile-donate-btn:hover{background:#d4843d}
-.hero{position:relative;height:650px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:0}
+.hero{position:relative;height:650px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;margin-bottom:0;padding-top:80px}
 .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:1}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.55) 100%);z-index:2}
 .hero-content{position:relative;z-index:3;text-align:center;color:white}
@@ -482,9 +482,10 @@ form input:focus,form textarea:focus{border-color:var(--earthy-green);box-shadow
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
 .team-member{text-align:center;transition:transform .3s}
 .team-member:hover{transform:translateY(-4px)}
-.member-image{width:100%;height:280px;overflow:hidden;border-radius:12px;margin-bottom:1rem;box-shadow:0 6px 20px rgba(0,0,0,.12);border:3px solid white}
-.member-image img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .3s}
-.team-member:hover .member-image img{transform:scale(1.05)}
+.member-image{width:100%;height:280px;overflow:hidden;border-radius:12px;margin-bottom:1rem;box-shadow:0 6px 20px rgba(0,0,0,.12);border:3px solid white;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f3f7f2,#e9eee6)}
+.member-icon{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(59,107,55,.12);color:var(--earthy-green);transition:transform .3s}
+.member-icon svg{width:62px;height:62px;fill:currentColor}
+.team-member:hover .member-icon{transform:scale(1.08)}
 .team-member h3{color:var(--earthy-green);font-size:1.2rem;margin:.5rem 0 0}
 .member-role{color:var(--burnt-ochre);font-weight:600;margin:.3rem 0 0;font-size:.95rem}
 
