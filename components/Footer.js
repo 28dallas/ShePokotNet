@@ -19,11 +19,31 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { href: 'https://facebook.com/shepokot', label: 'Facebook', icon: 'f' },
-    { href: 'https://twitter.com/shepokot', label: 'Twitter', icon: '𝕏' },
-    { href: 'https://instagram.com/shepokot', label: 'Instagram', icon: '📷' },
-    { href: 'https://linkedin.com/company/shepokot', label: 'LinkedIn', icon: 'in' },
-    { href: 'https://youtube.com/@shepokot', label: 'YouTube', icon: '▶' },
+    {
+      href: 'https://www.instagram.com/shepokot?igsh=cW5mNmtla3AyeWRt&utm_source=qr',
+      label: 'Instagram',
+      iconSrc: '/icons/instagram.png',
+    },
+    {
+      href: 'https://www.tiktok.com/@she.pokot.network?_r=1&_t=ZS-94XlFn2gEez',
+      label: 'TikTok',
+      iconSrc: '/icons/tiktok.png',
+    },
+    {
+      href: 'https://www.linkedin.com/in/she-pokot-network-4a41a03b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
+      label: 'LinkedIn',
+      iconSrc: '/icons/linkedin.png',
+    },
+    {
+      href: 'https://x.com/shepokotnetwork?s=11&t=p5G71GPpSaLVeLwVufgKZw',
+      label: 'X (Twitter)',
+      iconSrc: '/icons/x.png',
+    },
+    {
+      href: 'https://www.facebook.com/share/1AjPeor2cS/?mibextid=wwXIfr',
+      label: 'Facebook',
+      iconSrc: '/icons/facebook.png',
+    },
   ]
 
   return (
@@ -43,7 +63,7 @@ export default function Footer() {
               <div className="footer-social">
                 {socialLinks.map((social, index) => (
                   <a key={index} href={social.href} className="social-link" aria-label={social.label} target="_blank" rel="noopener noreferrer">
-                    {social.icon}
+                    <img src={social.iconSrc} alt="" className="social-icon" />
                   </a>
                 ))}
               </div>
@@ -163,6 +183,11 @@ export default function Footer() {
           color: white;
           text-decoration: none;
           transition: all 0.3s ease;
+        }
+
+        .social-icon {
+          width: 20px;
+          height: 20px;
         }
 
         .social-link:hover {
