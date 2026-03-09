@@ -73,8 +73,8 @@ export default function Footer() {
                 <ul className="contact-list">
                   <li>📍 West Pokot County<br />Kapenguria, Kenya</li>
                   <li>✉️ <a href="mailto:info@shepokot.org">info@shepokot.org</a></li>
-                  <li>📞 <a href="tel:+254700000000">+254 700 000 000</a></li>
-                  <li>💬 <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                  <li>📞 <a href="tel:+254762089003">0762089003</a></li>
+                  <li>💬 <a href="https://wa.me/254762089003" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
               </div>
             </div>

@@ -35,7 +35,7 @@ export default function SEO({
       "@type": "ContactPoint",
       "contactType": "General Inquiries",
       "email": "info@shepokot.org",
-      "telephone": "+254700000000"
+      "telephone": "+254762089003"
     },
     "sameAs": [
       "https://facebook.com/shepokot",

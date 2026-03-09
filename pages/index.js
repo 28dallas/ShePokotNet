@@ -128,7 +128,7 @@ export default function Home() {
                   Recurrent droughts and systemic inequality leave women and girls most vulnerable. They face:
                 </p>
                 <ul className="urgency-list" role="list">
-                  <li><strong>Climate Shocks:</strong> Recurring droughts and upredictable rainfall patterns.</li>
+                  <li><strong>Climate Shocks:</strong> Recurring droughts and increasingly unpredictable rainfall patterns that disrupt agricultural productivity, strain water resources, and negatively impact livelihoods and food security.</li>
                   <li><strong>Gendered Vulnerability:</strong> When resources shrink, girls are pulled from school and subjected to harmful practices.</li>
                   <li><strong>Economic Marginalization:</strong> Limited access to credit, markets, and decision-making power keeps communities trapped in poverty.</li>
                   <li><strong>Limited Agency:</strong> Local voices—especially women's—are rarely heard in solutions that affect them most.</li>
